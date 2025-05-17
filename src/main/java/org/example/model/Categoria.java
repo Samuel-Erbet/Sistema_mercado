@@ -1,12 +1,16 @@
 package org.example.model;
 
+import java.util.ArrayList;
+
 public class Categoria {
     private int codigo = 1;
     private String nome;
+    private ArrayList<Item> itens;
 
     public Categoria(String nome){
         this.nome = nome;
         this.codigo+=1;
+        this.itens = new ArrayList<>();
     }
 
     public int getCodigo() {
@@ -24,4 +28,22 @@ public class Categoria {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public void adicionarACategoria(Item item){
+        itens.add(item);
+    }
+
+    public void removerDaCategoria(Item item){
+        itens.remove(item);
+    }
+
+    public ArrayList<Item> getItens() {
+        return itens;
+    }
+
+    public void setItens(ArrayList<Item> itens) {
+        this.itens = itens;
+    }
+
+
 }

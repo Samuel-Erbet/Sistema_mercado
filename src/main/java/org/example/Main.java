@@ -14,16 +14,35 @@ public class Main {
         Categoria bebida = new Categoria("bebida");
 
         Item doritos = new Item("doritos", 9.50);
+        Item pao = new Item("pão de forma", 7.50);
+
+        Item pepsi = new Item("pepsi", 10.40);
         Item cocaCola = new Item("coca cola",10.50);
 
         Mercado bh = new Mercado("BH");
 
         bh.adicionarCategoria(alimentos);
         bh.adicionarCategoria(bebida);
+
+        //criando alimentos
         bh.adicionarItem(doritos);
+        bh.adicionarItem(pao);
+
+        //criando bebidas
         bh.adicionarItem(cocaCola);
+        bh.adicionarItem(pepsi);
 
-        bh.removerCategoria(0);
 
+        //adicionando alimentos a categoria
+        alimentos.adicionarACategoria(doritos);
+        alimentos.adicionarACategoria(pao);
+
+        //adicionando bebidas a categoria
+        bebida.adicionarACategoria(pepsi);
+        bebida.adicionarACategoria(cocaCola);
+
+        bh.adicionarItem(doritos);
+
+        bh.mostrarCategorias();
     }
 }

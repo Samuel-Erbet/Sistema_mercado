@@ -7,6 +7,8 @@ public class Mercado {
     private ArrayList<Categoria> categorias;
     private ArrayList<Item> itens;
 
+
+
     public Mercado(String nome){
         this.categorias = new ArrayList<>();
         this.itens = new ArrayList<>();
@@ -53,5 +55,11 @@ public class Mercado {
     public void removerCategoria(int codigo){
         System.out.println(categorias.get(codigo).getNome()+" foi removido");
         categorias.remove(codigo);
+    }
+
+    public void mostrarCategorias(){
+        for (int i = 0; i<categorias.size(); i++){
+            System.out.println(categorias.get(i).getNome());
+        }
     }
 }
