@@ -1,11 +1,13 @@
 package org.example.model;
 
 public class Item {
+    private static int count =0;
     private int codigo;
     private String nome;
     private double preco;
 
     public Item(String nome, double preco){
+        this.codigo = ++count;
         this.nome = nome;
         this.preco = preco;
     }
@@ -32,5 +34,14 @@ public class Item {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", preco=" + preco +
+                '}';
     }
 }

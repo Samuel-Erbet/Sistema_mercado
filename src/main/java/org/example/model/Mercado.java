@@ -10,9 +10,12 @@ public class Mercado {
 
 
     public Mercado(String nome){
+        this.nome = nome;
         this.categorias = new ArrayList<>();
         this.itens = new ArrayList<>();
     }
+
+
 
     public String getNome() {
         return nome;
@@ -57,9 +60,24 @@ public class Mercado {
         categorias.remove(codigo);
     }
 
-    public void mostrarCategorias(){
-        for (int i = 0; i<categorias.size(); i++){
-            System.out.println(categorias.get(i).getNome());
+    public void mostrarCategorias() {
+        for (Categoria c : categorias) {
+            System.out.println(c);
         }
     }
+
+
+    public void mostrarProdutos(int codigo){
+        if (codigo >=0 && codigo<categorias.size()){
+            Categoria categoria = categorias.get(codigo);
+            System.out.println("a categoria "+categoria.getNome());
+            for (Item c : categoria.getItens()){
+                System.out.println(c);
+            }
+        } else {
+            System.out.println("valor invalido");
+        }
+
+    }
+
 }

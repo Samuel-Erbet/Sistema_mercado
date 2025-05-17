@@ -3,13 +3,14 @@ package org.example.model;
 import java.util.ArrayList;
 
 public class Categoria {
-    private int codigo = 1;
+    private static int count = 0;
+    private int codigo = 0;
     private String nome;
     private ArrayList<Item> itens;
 
     public Categoria(String nome){
         this.nome = nome;
-        this.codigo+=1;
+        this.codigo=++count;
         this.itens = new ArrayList<>();
     }
 
@@ -45,5 +46,9 @@ public class Categoria {
         this.itens = itens;
     }
 
+    @Override
+    public String toString() {
+        return "codigo "+codigo+" categoria "+nome;
 
+    }
 }

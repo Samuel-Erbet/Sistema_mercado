@@ -44,5 +44,6 @@ public class Main {
         bh.adicionarItem(doritos);
 
         bh.mostrarCategorias();
+        bh.mostrarProdutos(1);
     }
 }
